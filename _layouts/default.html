@@ -12,17 +12,17 @@
   <body>
     <div class="wrapper">
       <header>
-        <h1><a href="/">monyxie.tk</a></h1>
+        {% include header.html %}
       </header>
       <section id="main">
         {{ content }}
       </section>
       <footer>
-        <p>Hosted on <a href="http://pages.github.com">GitHub Pages</a>.</p>
+        {% include footer.html %}
       </footer>
     </div>
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-    <!-- <script>window.jQuery || document.write('<script src="js/libs/jquery-1.6.2.min.js"><\/script>')</script> -->
+    <script>window.jQuery || document.write('<script src="js/libs/jquery-1.6.2.min.js"><\/script>')</script>
     <!--[if !IE]><script>fixScale(document);</script><!--<![endif]-->
   </body>
 </html>
