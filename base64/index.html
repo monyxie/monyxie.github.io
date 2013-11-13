@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title> base64 encoder/decoder </title>
+        <script src="Base64.js" type="text/javascript"></script>
+    </head>
+    <body>
+        <a href="."><h1> base64 encoder/decoder </h1></a>
+        <form id="theForm" enctype="multipart/form-data" method="post" accept-charset="utf-8" onsubmit="proceed();return false;">
+            <section>
+            <legend>
+                <label for="input">input</label><input id="inputfile" name="inputfile" type="file"/>
+            </legend>
+            <textarea name="input" id="input" rows="20" cols="140" placeholder="or drag'n'drop a file here"></textarea>
+            </section>
+            <section>
+            <input type="radio" name="act" id="act_encode" value="encode" checked><label for="act_encode">encode</label>
+            <input type="radio" name="act" id="act_decode" value="decode" ><label for="act_decode">decode</label>
+            <input type="submit" value="continue &rarr;">
+            </section>
+            <section>
+            <legend>
+                <label for="result">result</label>
+            </legend>
+            <textarea name="result" id="result" rows="20" cols="140"></textarea>
+            </section>
+        </form>
+        <script>
+            if (window.File && window.FileReader && window.FileList && window.Blob) {
+            } else {
+                alert('This page is not fully compatible with your browser. You may not be able to choose a local file as input string.');
+            }
+
+            if (!Base64) alert("Base64.js is missing or cannot be loaded.");
+            if (!window.$) window.$ = function (selector) { return document.querySelector(selector); };
+            function addEventHandler(obj, evt, handler) {
+                if(obj.addEventListener) {
+                    obj.addEventListener(evt, handler, false);
+                } else if(obj.attachEvent) {
+                    obj.attachEvent('on'+evt, handler);
+                } else {
+                    obj['on'+evt] = handler;
+                }
+            }
+            function proceed() {
+                if ($('#theForm').act_encode.checked) {
+                    $('#result').value = Base64.encode($('#input').value);
+                } else {
+                    $('#result').value = Base64.decode($('#input').value);
+                }
+            }
+            function cancel(e) {
+                e = e || window.event;
+                e.stopPropagation();
+                e.preventDefault();
+            }
+            
+            addEventHandler($('#inputfile'), 'change', function(e) {
+                e = e || window.event;
+                var reader = new FileReader();
+                reader.onload = function(e) {
+                    $('#input').value = e.target.result;
+                };                    
+                reader.onloadend = function (e) {
+                    proceed();
+                }
+                reader.readAsText(e.target.files[0]);
+                proceed();
+            });
+            addEventHandler($('#input'), 'drop', function(e) {
+                e = e || window.event;
+                e.stopPropagation();
+                e.preventDefault();
+                var reader = new FileReader();
+                reader.onload = function(e) {
+                    $('#input').value = e.target.result;
+                };                    
+                reader.onloadend = function (e) {
+                    proceed();
+                }
+                reader.readAsText(e.dataTransfer.files[0]);
+            });
+            addEventHandler($('#input'), 'dragover', cancel);
+            addEventHandler($('#input'), 'dragenter', cancel);
+        </script>
+    </body>
+</html>
