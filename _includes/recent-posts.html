@@ -1,0 +1,12 @@
+<ul class="posts">
+    {% if include.limit > 0 %}
+    {% assign limitz = include.limit %}
+    {% else %}
+    {% assign limitz = 5 %}
+    {% endif %}
+    {% for post in site.posts limit:limitz %}
+	   <li>
+		   <a href="{{ post.url }}">{{ post.title }}</a>
+	   </li>
+	{% endfor %} 
+</ul>

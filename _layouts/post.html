@@ -13,11 +13,11 @@
     <div class="wrapper">
       <header>
         {% include header.html %}
-        {% include recent-posts.html %}
       </header>
       <section id="main">
         {{ content }}
       </section>
+      {% include disqus.html %}
       <footer>
         {% include footer.html %}
       </footer>
