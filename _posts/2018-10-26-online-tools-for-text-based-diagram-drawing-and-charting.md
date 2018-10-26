@@ -33,3 +33,23 @@ title: Online Tools For Text-based Diagram Drawing And Charting
   * A tool for drawing UML diagrams based on a simple syntax.
   * Supports
     * Class diagram
+
+## [JS Sequence Diagrams](https://bramp.github.io/js-sequence-diagrams/)
+  * Generates UML sequence diagrams from simple text.
+  * Supports
+    * Sequence diagram
+
+## [flowchart.js](http://flowchart.js.org/)
+  * Draws simple SVG flow chart diagrams from textual representation of the diagram.
+  * Supports
+    * Flowchart
+
+## [WaveDrom Editor](https://wavedrom.com/editor.html)
+  * Digital timing diagram rendering engine
+  * Supports
+    * Digital timing diagram
+
+## [SVG Sequence Diagram Drawer](http://sullerandras.github.com/SVG-Sequence-Diagram/)
+  * Supports
+    * Sequence diagram
+
