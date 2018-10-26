@@ -18,6 +18,7 @@ title: Online Tools For Text-based Diagram Drawing And Charting
     * Object diagram
     * Deployment diagram
     * Timing diagram
+See also: [PlantText](https://www.planttext.com/)
 
 ## [Mermaid Live Editor](https://mermaidjs.github.io/mermaid-live-editor/)
   * Live editor for [Mermaid](https://github.com/knsv/mermaid).
