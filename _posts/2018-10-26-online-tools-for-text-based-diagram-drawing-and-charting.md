@@ -55,3 +55,11 @@ See also: [PlantText](https://www.planttext.com/)
   * Supports
     * Sequence diagram
 
+## [yEd Live](https://www.yworks.com/yed-live/)
+  * Powered by the commercial [yFiles for HTML](https://www.yworks.com/products/yfiles-for-html)
+  * Free for personal usage (and commercial, before a commercial offer is available)
+  * Supports
+    * Network diagram
+    * ER diagram
+    * Flowchart
+    * UML
